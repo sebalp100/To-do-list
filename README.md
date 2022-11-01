@@ -3,7 +3,7 @@
 
 # To Do List
 
-> In this project, we are setting up a To do list with basic functionality using JavaScript modules.} and Webpack.
+> In this project, we are setting up a To do list with basic functionality using JavaScript modules and Webpack.
 > ​
 
 ## Built With

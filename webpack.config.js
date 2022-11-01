@@ -6,8 +6,6 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     static: './dist',
-    watchFiles: ['src/*.html'],
-    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
