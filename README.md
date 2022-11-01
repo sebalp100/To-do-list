@@ -32,6 +32,9 @@ To get a local copy up and running follow these simple steps.
 - On your VSCode hit "Open a new repository" and paste the URL.
 - Select the destination folder.
 - All the files should be cloned to your local folder and are ready to be used.
+- You'll need to install Webpack on your root directory by using the following command on your terminal: npm install webpack webpack-cli --save-dev
+- Now you can use the npm run build command to create your new files on the dist folder.
+- You can now access the project by opening the index.html file from that folder
   ​
 
 ## Authors
