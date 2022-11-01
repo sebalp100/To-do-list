@@ -1,4 +1,5 @@
-let data = JSON.parse(localStorage.getItem('todo-list'));
+// eslint-disable-next-line  no-unused-vars
+const data = JSON.parse(localStorage.getItem('todo-list'));
 const list = document.querySelector('.list');
 
 export default class Actions {
@@ -16,4 +17,4 @@ export default class Actions {
     }
     list.innerHTML = li;
   }
-};
+}
