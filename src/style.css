@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,700;1,400&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+#to-do {
+  margin-top: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  box-shadow: rgba(44, 44, 44, 0.2) 0 8px 24px;
+}
+
+.today {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(236, 230, 230);
+}
+
+.today h1 {
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.today img {
+  width: 15px;
+  margin-right: 4%;
+  cursor: pointer;
+}
+
+.list-create {
+  padding: 7px 10px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid rgb(236, 230, 230);
+}
+
+.list-create input {
+  border: none;
+  padding: 8px 10px;
+  width: 95%;
+  outline: none;
+}
+
+.list-create img {
+  position: relative;
+  right: 0;
+  width: 15px;
+  cursor: pointer;
+}
+
+.list li {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border-bottom: 2px solid rgb(236, 230, 230);
+}
+
+.dots {
+  position: absolute;
+  right: 5%;
+}
+
+.clear-button button {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
