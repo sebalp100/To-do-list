@@ -7,24 +7,30 @@ import enter from './icons/enter.svg';
 
 import dots from './icons/dots.svg';
 
-import Actions from '../modules/actions.js';
+import trash from './icons/delete.svg';
+
+import { Actions } from '../modules/object.js';
 
 const input = document.querySelector('.list-create input');
 
-let data = JSON.parse(localStorage.getItem('todo-list'));
+document.addEventListener('DOMContentLoaded', Actions.showTask());
 
-document.addEventListener('DOMContentLoaded', Actions.showTask(data));
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    Actions.addTask();
+    Actions.showTask();
+  }
+});
 
-input.addEventListener('keyup', (e) => {
-  const task = input.value;
-  if (e.key === 'Enter' && task) {
-    if (!data) {
-      data = [];
-    }
-    input.value = '';
-    const taskInfo = { description: task, completed: false, index: data.length };
-    data.push(taskInfo);
-    localStorage.setItem('todo-list', JSON.stringify(data));
-    Actions.showTask(data);
+const list = document.querySelector('.list');
+
+list.addEventListener('click', (e) => {
+  Actions.removeTask(e);
+});
+
+list.addEventListener('keypress', (e) => {
+  if (e.target.classList.contains('newTask') && e.key === 'Enter') {
+    e.preventDefault();
+    Actions.editTask(e);
   }
 });
