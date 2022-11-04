@@ -73,7 +73,48 @@ body {
 
 .dots {
   position: absolute;
+  right: 4%;
+  width: 16px;
+  cursor: pointer;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border-bottom: 2px solid rgb(236, 230, 230);
+  position: relative;
+}
+
+.newTask {
+  outline: none;
+  width: 90%;
+}
+
+.menu-list {
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.14);
+  border-radius: 2px;
+  z-index: 2;
+  bottom: -42px;
+  position: absolute;
   right: 5%;
+  transform: scale(0);
+}
+
+.menu-list.active {
+  transform: scale(1);
+}
+
+.menu-list li {
+  height: 40px;
+}
+
+.menu-list li:hover {
+  background-color: rgb(243, 242, 236);
+  cursor: pointer;
 }
 
 .clear-button button {
