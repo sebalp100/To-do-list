@@ -12,6 +12,8 @@ import trash from './icons/delete.svg';
 import { Actions } from '../modules/object.js';
 
 const input = document.querySelector('.list-create input');
+const list = document.querySelector('.list');
+const clearButton = document.querySelector('.clear-button')
 
 document.addEventListener('DOMContentLoaded', Actions.showTask());
 
@@ -22,8 +24,6 @@ input.addEventListener('keydown', (e) => {
   }
 });
 
-const list = document.querySelector('.list');
-
 list.addEventListener('click', (e) => {
   Actions.removeTask(e);
 });
@@ -33,4 +33,21 @@ list.addEventListener('keypress', (e) => {
     e.preventDefault();
     Actions.editTask(e);
   }
+});
+
+clearButton.addEventListener('click', () => {
+  Actions.isChecked();
+});
+
+list.addEventListener('change', () => { // listen for changes in chekboxes
+  const checkbox = document.querySelectorAll('.checkbox');
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  checkbox.forEach((checkbox) => {
+    if (checkbox.checked) {
+      tasks[checkbox.id].completed = true;
+    } else {
+      tasks[checkbox.id].completed = false;
+    }
+  });
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 });
