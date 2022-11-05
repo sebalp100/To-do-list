@@ -1,4 +1,5 @@
 let tasks = [];
+let checkboxId = [];
 
 export default class Todo {
   constructor(description, completed, index) {
@@ -72,5 +73,27 @@ export class Actions {
       tasks[ids].description = event.target.innerText; // change old description for the new value
     }
     localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  static isChecked() {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const checkboxIds = document.querySelectorAll('.checkbox'); // select all checkboxes
+    const counter = []; // empty array to store task index
+    checkboxIds.forEach((checkbox) => {
+      if (checkbox.checked === true) {
+        const targetId = checkbox.id;
+        checkboxId.push(targetId); // store checked ids
+      }
+    });
+    // eslint-disable-next-line  radix
+    checkboxId.forEach((checkbox) => counter.push(parseInt(checkbox)));
+    const checked = tasks.filter((task) => !counter.includes(task.index)); // filter ids not checked
+    checked.forEach((task, index) => { // set new index
+      task.index = index;
+      return task.index;
+    });
+    localStorage.setItem('tasks', JSON.stringify(checked));
+    checkboxId = []; // remove the stored checked ids
+    Actions.showTask();
   }
 }
