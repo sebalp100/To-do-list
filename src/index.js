@@ -36,7 +36,7 @@ list.addEventListener('keypress', (e) => {
 });
 
 clearButton.addEventListener('click', () => {
-  Actions.isChecked();
+  Actions.isChecked();  // filter() method gets called from the isChecked funtion in object.js
 });
 
 list.addEventListener('change', () => { // listen for changes in chekboxes
