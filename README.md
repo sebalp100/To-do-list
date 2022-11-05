@@ -62,6 +62,7 @@ Give a ⭐️ if you like this project!
 - Microverse
 - Traversy Media for his tutorial about JavaScript events (https://www.youtube.com/watch?v=JaMCxVWtW58&ab_channel=TraversyMedia)
 - Black Code for his explanation about local storage (https://www.youtube.com/watch?v=xVwp_6ubgz0&ab_channel=blackcode)
+- My coding partners for their help
 
 ## License
 
