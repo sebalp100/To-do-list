@@ -78,7 +78,7 @@ export class Actions {
   static isChecked() {
     const tasks = JSON.parse(localStorage.getItem('tasks'));
     const checkboxIds = document.querySelectorAll('.checkbox'); // select all checkboxes
-    let counter = []; // empty array to store task index
+    const counter = []; // empty array to store task index
     checkboxIds.forEach((checkbox) => {
       if (checkbox.checked === true) {
         const targetId = checkbox.id;

@@ -13,7 +13,7 @@ import { Actions } from '../modules/object.js';
 
 const input = document.querySelector('.list-create input');
 const list = document.querySelector('.list');
-const clearButton = document.querySelector('.clear-button')
+const clearButton = document.querySelector('.clear-button');
 
 document.addEventListener('DOMContentLoaded', Actions.showTask());
 
